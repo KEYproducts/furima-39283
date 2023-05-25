@@ -38,13 +38,13 @@
 - has_one :order
 - has_one_attached :image
 
-#### Association(ActiveHash)
+### Association(ActiveHash)
 
 - belongs_to :category
 - belongs_to :condition
-- belongs_to :shippingFee
+- belongs_to :shipping_fee
 - belongs_to :prefecture
-- belongs_to :shippingDays
+- belongs_to :delivery_duration
 
 ## orders テーブル
 
@@ -75,6 +75,6 @@
 
 - belongs_to :order
 
-#### Association(ActiveHash)
+### Association(ActiveHash)
 
 - belongs_to :prefecture
