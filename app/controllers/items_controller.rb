@@ -22,12 +22,11 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(
       :image, :name, :text, :category_id, :sales_status_id, :shipping_fee_id, :prefecture_id, :scheduled_delivery_id, :price
-      ).merge(user_id: current_user.id)
+    ).merge(user_id: current_user.id)
   end
 
   def confilm_user_signed_in
-    unless user_signed_in?
-      redirect_to new_user_session_path
-    end
+    return if user_signed_in?
+    redirect_to new_user_session_path
   end
 end
