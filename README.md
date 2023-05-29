@@ -20,17 +20,17 @@
 
 ## items テーブル
 
-| Column               | Type       | Options                        |
-| -------------------- | ---------- | ------------------------------ |
-| name                 | string     | null: false                    |
-| content              | text       | null: false                    |
-| category_id          | integer    | null: false                    |
-| condition_id         | integer    | null: false                    |
-| shipping_fee_id      | integer    | null: false                    |
-| prefecture_id        | integer    | null: false                    |
-| delivery_duration_id | integer    | null: false                    |
-| price                | integer    | null: false                    |
-| user                 | references | null: false, foreign_key: true |
+| Column                | Type       | Options                        |
+| --------------------- | ---------- | ------------------------------ |
+| name                  | string     | null: false                    |
+| text                  | text       | null: false                    |
+| category_id           | integer    | null: false                    |
+| sales_status_id       | integer    | null: false                    |
+| shipping_fee_id       | integer    | null: false                    |
+| prefecture_id         | integer    | null: false                    |
+| scheduled_delivery_id | integer    | null: false                    |
+| price                 | integer    | null: false                    |
+| user                  | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -41,10 +41,10 @@
 ### Association(ActiveHash)
 
 - belongs_to :category
-- belongs_to :condition
+- belongs_to :sales_status
 - belongs_to :shipping_fee
 - belongs_to :prefecture
-- belongs_to :delivery_duration
+- belongs_to :scheduled_delivery
 
 ## orders テーブル
 
@@ -66,9 +66,9 @@
 | postal_code   | string     | null: false                    |
 | prefecture_id | integer    | null: false                    |
 | city          | string     | null: false                    |
-| street        | string     | null: false                    |
+| addresses     | string     | null: false                    |
 | building      | string     |                                |
-| telephone     | string     | null: false                    |
+| phone-number  | string     | null: false                    |
 | order         | references | null: false, foreign_key: true |
 
 ### Association

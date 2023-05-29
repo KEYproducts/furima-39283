@@ -79,3 +79,18 @@ Style/FrozenStringLiteralComment:
 # メソッドパラメータ名の最小文字数を設定
 Naming/MethodParameterName:
  MinNameLength: 1
+
+# 自動生成のファイルを検知にひっかからないよう設定
+Style/StringLiterals:
+ Exclude:
+   - "spec/rails_helper.rb"
+   - "test/application_system_test_case.rb"
+   - "test/channels/application_cable/connection_test.rb"
+
+Style/BlockComments:
+ Exclude:
+   - "spec/spec_helper.rb"
+
+Layout/CommentIndentation:
+ Exclude:
+   - "spec/spec_helper.rb"
