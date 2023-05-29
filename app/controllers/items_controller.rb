@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :confilm_user_signed_in, only: :new
 
   def index
+    @items = Item.order('created_at DESC')
   end
 
   def new
