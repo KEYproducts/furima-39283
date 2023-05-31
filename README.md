@@ -68,13 +68,9 @@
 | city          | string     | null: false                    |
 | addresses     | string     | null: false                    |
 | building      | string     |                                |
-| phone-number  | string     | null: false                    |
+| phone_number  | string     | null: false                    |
 | order         | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :order
-
-### Association(ActiveHash)
-
-- belongs_to :prefecture
