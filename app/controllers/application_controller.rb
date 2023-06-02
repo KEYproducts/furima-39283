@@ -15,4 +15,8 @@ class ApplicationController < ActionController::Base
       :sign_up, keys: [:nickname, :last_name, :first_name, :last_name_kana, :first_name_kana, :birthday]
     )
   end
+  
+  def check_purchased_status
+    redirect_to root_path if @item.order != nil
+  end
 end
