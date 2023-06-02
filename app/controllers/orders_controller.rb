@@ -43,4 +43,8 @@ class OrdersController < ApplicationController
   def check_purchase_authorization
     redirect_to root_path if current_user.id == @item.user.id
   end
+  
+  def check_purchased_status
+    redirect_to root_path unless @item.order.nil?
+  end
 end
