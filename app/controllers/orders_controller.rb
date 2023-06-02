@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
   before_action :set_item
   before_action :check_purchase_authorization
   before_action :check_purchased_status
-  
+
   def index
     @order_address = OrderAddress.new
   end
@@ -20,7 +20,7 @@ class OrdersController < ApplicationController
   end
 
   private
-  
+
   def order_params
     params.require(:order_address).permit(
       :postal_code, :prefecture_id, :city, :addresses, :building, :phone_number
@@ -28,12 +28,12 @@ class OrdersController < ApplicationController
   end
 
   def pay_item
-    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
-      Payjp::Charge.create(
-        amount: @item.price,
-        card: order_params[:token],
-        currency: 'jpy'
-      )
+    Payjp.api_key = ENV['PAYJP_SECRET_KEY']
+    Payjp::Charge.create(
+      amount: @item.price,
+      card: order_params[:token],
+      currency: 'jpy'
+    )
   end
 
   def set_item
