@@ -59,7 +59,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rubocop', require: false
 
 group :production do
-  gem 'pg'
   gem 'unicorn', '5.4.1'
 end
 
